@@ -702,6 +702,10 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6819400527428509720, guid: 3b14ed24ffdb3c848a8d77076f72299d, type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7953168287776208579, guid: 3b14ed24ffdb3c848a8d77076f72299d, type: 3}
       propertyPath: m_Name
       value: PlayerPoint

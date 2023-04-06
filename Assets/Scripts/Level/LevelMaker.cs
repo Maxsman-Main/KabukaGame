@@ -34,7 +34,7 @@ namespace Level
         
         private void Start()
         {
-            _levels = _generator.GenerateLevelWithoutParameters();
+            _levels = _generator.GenerateRandomLevel(1);
             _currentLevel = -1;
         }
     }
