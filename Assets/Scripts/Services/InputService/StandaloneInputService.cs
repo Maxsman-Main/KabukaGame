@@ -8,5 +8,6 @@ namespace Services.InputService
         private const string VerticalAxisName = "Vertical";
 
         public Vector3 Axis => new(Input.GetAxis(HorizontalAxisName), Input.GetAxis(VerticalAxisName));
+        public float HorizontalRaw => Input.GetAxisRaw(HorizontalAxisName);
     }
 }

@@ -13,5 +13,24 @@ namespace Scriptable.Move
             Vector2 newVelocity = new Vector2(input.x * movementSpeed, rigidbody.velocity.y); 
             rigidbody.velocity = newVelocity;
         }
+
+        public override void Flip(ref bool isRight, Transform transform, float horizontal)
+        {
+            if (isRight && horizontal < 0f || !isRight && horizontal > 0f)
+            {
+                var rotate = transform.rotation.normalized;
+                if (isRight)
+                {
+                    rotate.y = 180;
+                }
+                else
+                {
+                    rotate.y = 0;
+                }
+                transform.rotation = rotate;
+                
+                isRight = !isRight;
+            }
+        }
     }
 }

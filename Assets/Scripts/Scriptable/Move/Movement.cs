@@ -7,5 +7,6 @@ namespace Scriptable.Move
         public float movementSpeed;
 
         public abstract void Move(Vector3 input, Rigidbody rigidbody);
+        public abstract void Flip(ref bool isRight, Transform transform, float horizontal);
     }
 }
