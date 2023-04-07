@@ -1,4 +1,7 @@
-﻿using UnityEngine;
+﻿using System.Collections;
+using Player;
+using UnityEngine;
+using Zenject;
 
 namespace Scriptable.Move
 {
@@ -19,21 +22,13 @@ namespace Scriptable.Move
 
         public override void Flip(ref bool isRight, Transform transform, float horizontal)
         {
-            if (isRight && horizontal < 0f || !isRight && horizontal > 0f)
-            {
-                var rotate = transform.rotation.normalized;
-                if (isRight)
-                {
-                    rotate.y = 180;
-                }
-                else
-                {
-                    rotate.y = 0;
-                }
-                transform.rotation = rotate;
+            if ((!isRight || !(horizontal < 0f)) && (isRight || !(horizontal > 0f))) return;
+            var rotate = transform.rotation.normalized; //use rotation because rigidbody3d don't support scale with minus
+            rotate.y = isRight ? 180 : 0;
                 
-                isRight = !isRight;
-            }
+            transform.rotation = rotate;
+                
+            isRight = !isRight;
         }
 
         public override void Jump(bool isGrounded, float jumpForce, Rigidbody rigidbody)
@@ -56,5 +51,29 @@ namespace Scriptable.Move
                 coyoteTimeCounter = 0f;
             }
         }
+
+        public override IEnumerator Dash(float dashingPower, float dashingTime, float dashingCooldown, Rigidbody rigidbody, Transform transform, bool isRight)
+        {
+            PlayerMovement _playerMovement = transform.gameObject.GetComponent<PlayerMovement>(); //TODO: fix meh code with Zenject
+            _playerMovement.canDash = false;
+            
+            _playerMovement.isDashing = true;
+            
+            rigidbody.useGravity = false;
+            
+            rigidbody.velocity = isRight
+                ? new Vector2(transform.localScale.x * dashingPower, 0f)
+                : new Vector2(-transform.localScale.x * dashingPower, 0f);
+            yield return new WaitForSeconds(dashingTime);
+            
+            rigidbody.useGravity = true;
+            
+            _playerMovement.isDashing = false;
+            
+            yield return new WaitForSeconds(dashingCooldown);
+            
+            _playerMovement.canDash = true;
+        }
+        
     }
 }
