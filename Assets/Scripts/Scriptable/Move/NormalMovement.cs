@@ -32,5 +32,17 @@ namespace Scriptable.Move
                 isRight = !isRight;
             }
         }
+
+        public override void Jump(bool isGrounded, float jumpForce, Rigidbody rigidbody)
+        {
+            if (Input.GetButtonDown("Jump") && isGrounded)
+            {
+                rigidbody.velocity = new Vector2(rigidbody.velocity.x, jumpForce);
+            }
+            if (Input.GetButtonUp("Jump") && rigidbody.velocity.y > 0f)
+            {
+                rigidbody.velocity = new Vector2(rigidbody.velocity.x, rigidbody.velocity.y * 0.5f);
+            }
+        }
     }
 }

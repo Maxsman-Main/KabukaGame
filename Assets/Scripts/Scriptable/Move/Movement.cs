@@ -8,5 +8,6 @@ namespace Scriptable.Move
 
         public abstract void Move(Vector3 input, Rigidbody rigidbody);
         public abstract void Flip(ref bool isRight, Transform transform, float horizontal);
+        public abstract void Jump(bool isGrounded, float jumpForce, Rigidbody rigidbody);
     }
 }
