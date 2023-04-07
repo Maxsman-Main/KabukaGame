@@ -35,7 +35,6 @@ namespace Player
 
         private bool GroundCheck()
         {
-            Debug.Log(Physics.CheckSphere(_groundCheck.position, .1f, _groundLayer));
             return Physics.CheckSphere(_groundCheck.position, .1f, _groundLayer);
         }
     }

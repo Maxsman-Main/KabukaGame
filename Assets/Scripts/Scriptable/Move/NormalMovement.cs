@@ -7,6 +7,9 @@ namespace Scriptable.Move
     {
         private const string FileName = "NormalMovement";
         private const string MenuName = "Movement/NormalMovement";
+        
+        private float coyoteTimeCounter;
+        private float jumpBufferCounter;
 
         public override void Move(Vector3 input, Rigidbody rigidbody)
         {
@@ -35,13 +38,22 @@ namespace Scriptable.Move
 
         public override void Jump(bool isGrounded, float jumpForce, Rigidbody rigidbody)
         {
-            if (Input.GetButtonDown("Jump") && isGrounded)
+            if (isGrounded) coyoteTimeCounter = 0.2f;
+                else coyoteTimeCounter -= Time.deltaTime;
+
+            if (Input.GetButtonDown("Jump")) jumpBufferCounter = 0.2f;
+                else jumpBufferCounter -= Time.deltaTime;
+
+            if (coyoteTimeCounter > 0f && jumpBufferCounter > 0f)
             {
                 rigidbody.velocity = new Vector2(rigidbody.velocity.x, jumpForce);
+                jumpBufferCounter = 0f;
             }
+            
             if (Input.GetButtonUp("Jump") && rigidbody.velocity.y > 0f)
             {
                 rigidbody.velocity = new Vector2(rigidbody.velocity.x, rigidbody.velocity.y * 0.5f);
+                coyoteTimeCounter = 0f;
             }
         }
     }
