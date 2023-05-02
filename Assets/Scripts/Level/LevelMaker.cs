@@ -29,12 +29,13 @@ namespace Level
             Destroy(_currentLevelPrefab);
             _currentLevelPrefab = Instantiate(_levels[_currentLevel]);
             var levelPattern = _currentLevelPrefab.GetComponent<LevelPattern>();
+            levelPattern.MakePatternGeneration();
             OneLevelIsDone?.Invoke(levelPattern.PlayerPosition);
         }
         
         private void Start()
         {
-            _levels = _generator.GenerateRandomLevel(1);
+            _levels = _generator.GenerateRandomLevel(2);
             _currentLevel = -1;
         }
     }

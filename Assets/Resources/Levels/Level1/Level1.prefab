@@ -52,6 +52,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerPosition: {fileID: 807857343313975408}
   patternEndPosition: {fileID: 8178278262174920417}
+  spawnGroups: []
 --- !u!1 &1394289968367780109
 GameObject:
   m_ObjectHideFlags: 0
