@@ -23,7 +23,7 @@ public class HpUI : MonoBehaviour
     {
         _text.text = $"HP: {value}";
     }
-
+    
     private void OnDestroy()
     {
         _health.OnDamaged -= TextHpUpdate;
