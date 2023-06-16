@@ -9,9 +9,12 @@ public class PlayerColor : MonoBehaviour
         Green,
         Blue
     }
-
-    private Renderer playerMeshRenderer;
+    
     private static ActiveColor currentColor = ActiveColor.Red;
+
+    [SerializeField] private ActiveColor color = currentColor;
+    
+    private Renderer playerMeshRenderer;
 
     private void Awake()
     {
@@ -43,12 +46,15 @@ public class PlayerColor : MonoBehaviour
         {
             case ActiveColor.Red:
                 playerMeshRenderer.material.color = Color.red;
+                color = ActiveColor.Red;
                 break;
             case ActiveColor.Green:
                 playerMeshRenderer.material.color = Color.green;
+                color = ActiveColor.Green;
                 break;
             case ActiveColor.Blue:
                 playerMeshRenderer.material.color = Color.blue;
+                color = ActiveColor.Blue;
                 break;
         }
     }
@@ -62,6 +68,9 @@ public class PlayerColor : MonoBehaviour
 
     private void Update()
     {
+        currentColor = color;
+        SetPlayerColor();
+        
         if (Input.GetKeyDown(KeyCode.F))
         {
             ToggleColor();
