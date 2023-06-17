@@ -18,12 +18,7 @@ public class ResourceManager : MonoBehaviour
     {
         Instance = this;
     }
-
-    private void Start()
-    {
-        ResourceChanged?.Invoke(Resources);
-    }
-
+    
     [Inject]
     private void Construct()
     {

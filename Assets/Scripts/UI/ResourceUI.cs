@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -7,12 +8,12 @@ public class ResourceUI : MonoBehaviour
 {
     private Text _text;
 
-    private void Start()
+    private void Awake()
     {
         _text = gameObject.GetComponent<Text>();
         ResourceManager.Instance.ResourceChanged += TextHpUpdate;
+        ResourceManager.Instance.ResourceChanged?.Invoke(ResourceManager.Instance.Resources);
     }
-
     private void TextHpUpdate(int value)
     {
         _text.text = $"Res: {value}";

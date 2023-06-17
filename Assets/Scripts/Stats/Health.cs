@@ -8,6 +8,13 @@ public class Health : MonoBehaviour
     [SerializeField] 
     private int health;
     
+    public static Health Instance { get; private set; }
+    
+    public void Awake()
+    {
+        Instance = this;
+    }
+    
     public Action<int> OnDamaged;
     public Action OnDied;
 

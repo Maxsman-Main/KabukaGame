@@ -11,7 +11,7 @@ public class HpUI : MonoBehaviour
     
     private Text _text;
 
-    private void Start()
+    private void Awake()
     {
         _text = gameObject.GetComponent<Text>();
         _health.OnDamaged += TextHpUpdate;
