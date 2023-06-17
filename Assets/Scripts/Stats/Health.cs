@@ -27,4 +27,16 @@ public class Health : MonoBehaviour
         }
         OnDamaged?.Invoke(health);
     }
+    
+    public void HpPlus(int value)
+    {
+        health += value;
+        OnDamaged?.Invoke(health);
+    }
+    
+    public void SetHp(int value)
+    {
+        health = value;
+        OnDamaged?.Invoke(health);
+    }
 }
