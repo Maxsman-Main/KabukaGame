@@ -13,10 +13,12 @@ namespace Scriptable.Move
         
         private float coyoteTimeCounter;
         private float jumpBufferCounter;
+        
+        
 
-        public override void Move(Vector3 input, Rigidbody rigidbody)
+        public override void Move(Vector3 input, Rigidbody rigidbody, JoystickInput joystickInput)
         {
-            Vector2 newVelocity = new Vector2(input.x * movementSpeed, rigidbody.velocity.y); 
+            Vector2 newVelocity = new Vector2((input.x + joystickInput.Horizontal) * movementSpeed, rigidbody.velocity.y); 
             rigidbody.velocity = newVelocity;
         }
 

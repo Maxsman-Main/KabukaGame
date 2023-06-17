@@ -7,8 +7,7 @@ using Zenject;
 
 public class HpUI : MonoBehaviour
 {
-    [Inject]
-    private Health _health;
+    [Inject] private Health _health;
     
     private Text _text;
 
