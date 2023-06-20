@@ -179,7 +179,7 @@ GameObject:
   - component: {fileID: 163382499}
   - component: {fileID: 163382500}
   m_Layer: 0
-  m_Name: asd
+  m_Name: ResorcesManager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
