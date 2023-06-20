@@ -24,5 +24,4 @@ public class HoldObject : MonoBehaviour
             objectCollider.enabled = false;
         }
     }
-    
 }
