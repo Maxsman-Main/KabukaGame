@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using Player;
 using UnityEngine;
+using UnityEngine.EventSystems;
 using Zenject;
 
 namespace Scriptable.Move
@@ -38,17 +39,23 @@ namespace Scriptable.Move
             if (isGrounded) coyoteTimeCounter = 0.2f;
                 else coyoteTimeCounter -= Time.deltaTime;
 
-            if (Input.GetButtonDown("Jump")) jumpBufferCounter = 0.2f;
-                else jumpBufferCounter -= Time.deltaTime;
-
+            if (jumpClick.isUIButtonDown || Input.GetButtonDown("Jump"))
+            {
+                jumpBufferCounter = 0.2f;
+                jumpClick.isUIButtonDown = false;
+            }
+            else 
+                jumpBufferCounter -= Time.deltaTime;
+            
             if (coyoteTimeCounter > 0f && jumpBufferCounter > 0f)
             {
                 rigidbody.velocity = new Vector2(rigidbody.velocity.x, jumpForce);
                 jumpBufferCounter = 0f;
             }
             
-            if (Input.GetButtonUp("Jump") && rigidbody.velocity.y > 0f)
+            if ((Input.GetButtonUp("Jump") && rigidbody.velocity.y > 0f) || jumpClick.isUIButtonUp)
             {
+                jumpClick.isUIButtonUp = false;
                 rigidbody.velocity = new Vector2(rigidbody.velocity.x, rigidbody.velocity.y * 0.5f);
                 coyoteTimeCounter = 0f;
             }
@@ -76,6 +83,5 @@ namespace Scriptable.Move
             
             _playerMovement.canDash = true;
         }
-        
     }
 }

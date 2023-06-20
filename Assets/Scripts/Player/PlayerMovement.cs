@@ -1,6 +1,7 @@
 ﻿using Scriptable.Move;
 using Services.InputService;
 using UnityEngine;
+using UnityEngine.UI;
 using Zenject;
 
 namespace Player
@@ -12,6 +13,7 @@ namespace Player
         [Inject] private Movement _movement;
         [Inject] private JoystickInput _joystickInput;
         
+        [SerializeField] private Button _dashbtn;
         [SerializeField] private float jumpForce = 3f;
         [SerializeField] private float dashingPower = 20f;
         [SerializeField] private float dashingTime = 0.2f;
@@ -20,6 +22,7 @@ namespace Player
         private Transform _groundCheck;
         private Rigidbody _rigidbody;
         private bool _isRight;
+        private bool dashBtn;
         public bool canDash { get; set; }
         public bool isDashing { get; set; }
         private LayerMask _groundLayer;
@@ -31,6 +34,7 @@ namespace Player
             _groundCheck = GetComponentInChildren<Transform>().GetChild(0);
             _isRight = true;
             canDash = true;
+            dashBtn = false;
         }
 
         public void Update()
@@ -39,13 +43,23 @@ namespace Player
             _movement.Move(_inputService.Axis, _rigidbody, _joystickInput);
             _movement.Flip(ref _isRight, transform, _inputService.HorizontalRaw + _joystickInput.Horizontal);
             _movement.Jump(GroundCheck(), jumpForce, _rigidbody);
-            if (Input.GetButtonDown("Dash") && canDash) 
+            if ((dashBtn || Input.GetButtonDown("Dash")) && canDash)
+            {
+                dashBtn = false;
                 StartCoroutine( _movement.Dash(dashingPower, dashingTime, dashingCooldown, _rigidbody, transform, _isRight));
+            }
+            if (canDash)
+                _dashbtn.interactable = true;
         }
 
         private bool GroundCheck()
         {
             return Physics.CheckSphere(_groundCheck.position, .1f, _groundLayer);
+        }
+
+        public void DashBtn()
+        {
+            dashBtn = true;
         }
     }
 }
