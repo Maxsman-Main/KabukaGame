@@ -6,7 +6,7 @@ using UnityEngine.UI;
 public class CountdownTimer : MonoBehaviour
 {
     public float duration = 60.0f;
-    public Action onTimerExpired;
+    public static Action onTimerExpired;
 
     private Text timerText;
 

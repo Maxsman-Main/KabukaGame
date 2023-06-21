@@ -16,7 +16,7 @@ public class Health : MonoBehaviour
     }
     
     public Action<int> OnDamaged;
-    public Action OnDied;
+    public static Action OnDied;
 
     public void GetDamage(int value)
     {
