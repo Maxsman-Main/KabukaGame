@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 1624544959618992170}
   - component: {fileID: 2202059634610890068}
   - component: {fileID: 6304830148468768290}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Floor1x1Blue
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -104,7 +104,7 @@ BoxCollider:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 976005104237963775}
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 13400000, guid: 4a94634fa2aa03a44b6e5eb0fbd026a8, type: 2}
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2

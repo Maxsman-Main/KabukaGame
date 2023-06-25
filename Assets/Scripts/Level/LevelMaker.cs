@@ -8,6 +8,8 @@ namespace Level
 {
     public class LevelMaker : MonoBehaviour
     {
+        [SerializeField] private int levelSize;
+        
         [Inject] private IGenerator _generator;
         
         private List<GameObject> _levels;
@@ -35,7 +37,7 @@ namespace Level
         
         private void Start()
         {
-            _levels = _generator.GenerateRandomLevel(2);
+            _levels = _generator.GenerateRandomLevel(levelSize);
             _currentLevel = -1;
         }
     }

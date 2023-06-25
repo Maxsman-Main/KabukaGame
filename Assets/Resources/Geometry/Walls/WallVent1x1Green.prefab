@@ -12,7 +12,8 @@ GameObject:
   - component: {fileID: 5736554973120737207}
   - component: {fileID: 7527943881557302141}
   - component: {fileID: 1253283364592296660}
-  m_Layer: 0
+  - component: {fileID: -3198044767148991124}
+  m_Layer: 6
   m_Name: WallVent1x1Green
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -96,3 +97,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0f0be32f9a4bae8498b7f40b38a921ac, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!65 &-3198044767148991124
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8320502993026022056}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1.0000002, y: 1, z: 1.0695465}
+  m_Center: {x: -0.000000029802322, y: -0.0010488182, z: 0.03477305}
