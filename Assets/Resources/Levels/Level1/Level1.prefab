@@ -1749,6 +1749,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 7795548674530026383}
     m_Modifications:
+    - target: {fileID: 4606174583700464900, guid: 915baa10aaa2594479d37566ff485dd9, type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5464441671200367838, guid: 915baa10aaa2594479d37566ff485dd9, type: 3}
       propertyPath: m_Name
       value: EndPoint
