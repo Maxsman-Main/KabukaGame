@@ -2,16 +2,21 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Zenject;
 
 public class Health : MonoBehaviour
 {
     [SerializeField] 
     private int health;
+
+    [Inject] private SaveManager saveManager;
     
+    private HealthData hpData;
     public static Health Instance { get; private set; }
     
     public void Awake()
     {
+        SetHp();
         Instance = this;
     }
     
@@ -34,9 +39,19 @@ public class Health : MonoBehaviour
         OnDamaged?.Invoke(health);
     }
     
-    public void SetHp(int value)
+    private void SetHp()
     {
-        health = value;
-        OnDamaged?.Invoke(health);
+        hpData = saveManager.Load<HealthData>("HealthData") ?? new HealthData();
+        health = hpData.heath;
+    }
+    
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.Delete))
+        {
+            saveManager.Save("HealthData", new HealthData());
+            SetHp();
+            OnDamaged?.Invoke(health);
+        }
     }
 }

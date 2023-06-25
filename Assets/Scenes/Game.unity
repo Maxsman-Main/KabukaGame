@@ -2088,6 +2088,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1806756179, guid: dd61d8799a155874e82346e7ed157a8a, type: 3}
+      propertyPath: health
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1806756179, guid: dd61d8799a155874e82346e7ed157a8a, type: 3}
+      propertyPath: maxHealth
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 1806756186, guid: dd61d8799a155874e82346e7ed157a8a, type: 3}
       propertyPath: currentColors
       value: 2

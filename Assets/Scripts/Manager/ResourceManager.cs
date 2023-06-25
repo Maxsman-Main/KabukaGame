@@ -57,5 +57,9 @@ public class ResourceManager : MonoBehaviour
         {
             ClearResource();
         }
+        if (Input.GetKeyDown(KeyCode.Insert))
+        {
+            AddResource(1);
+        }
     }
 }

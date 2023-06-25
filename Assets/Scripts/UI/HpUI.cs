@@ -10,8 +10,7 @@ public class HpUI : MonoBehaviour
     [Inject] private Health _health;
     
     private Text _text;
-
-    private void Awake()
+    private void Start()
     {
         _text = gameObject.GetComponent<Text>();
         _health.OnDamaged += TextHpUpdate;
