@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class JoystickInput : MonoBehaviour, IJoystickInput
 {
-    public float Horizontal => gameObject.GetComponent<FixedJoystick>().Horizontal;
+    public float Horizontal => gameObject.GetComponent<FloatingJoystick>().Horizontal;
 
-    public float Vertical => gameObject.GetComponent<FixedJoystick>().Vertical;
+    public float Vertical => gameObject.GetComponent<FloatingJoystick>().Vertical;
 }
