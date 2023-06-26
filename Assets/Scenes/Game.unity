@@ -504,7 +504,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Navigation:
-    m_Mode: 3
+    m_Mode: 0
     m_WrapAround: 0
     m_SelectOnUp: {fileID: 0}
     m_SelectOnDown: {fileID: 0}
@@ -1430,7 +1430,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Navigation:
-    m_Mode: 3
+    m_Mode: 0
     m_WrapAround: 0
     m_SelectOnUp: {fileID: 0}
     m_SelectOnDown: {fileID: 0}
@@ -1795,7 +1795,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Navigation:
-    m_Mode: 3
+    m_Mode: 0
     m_WrapAround: 0
     m_SelectOnUp: {fileID: 0}
     m_SelectOnDown: {fileID: 0}
@@ -2133,6 +2133,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1806756186, guid: dd61d8799a155874e82346e7ed157a8a, type: 3}
+      propertyPath: playerMaterial
+      value: 
+      objectReference: {fileID: 2100000, guid: ae11d341076be6749b0c66c7aaa28334, type: 2}
     - target: {fileID: 3114359888090252084, guid: dd61d8799a155874e82346e7ed157a8a, type: 3}
       propertyPath: _dashbtn
       value: 
@@ -2304,7 +2308,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bc3ea9872dfb4b13b166d16ece28ec87, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  levelSize: 1
+  levelSize: 10
 --- !u!4 &1658947764
 Transform:
   m_ObjectHideFlags: 0

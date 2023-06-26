@@ -4,12 +4,12 @@ using UnityEngine;
 
 public class HoldObject : MonoBehaviour
 {
-    private BoxCollider objectCollider;
+    private Collider objectCollider;
     private Renderer objectRenderer;
 
     public void Awake()
     {
-        objectCollider = gameObject.GetComponent<BoxCollider>();
+        objectCollider = gameObject.GetComponent<Collider>();
         objectRenderer = gameObject.GetComponent<Renderer>();
     }
 

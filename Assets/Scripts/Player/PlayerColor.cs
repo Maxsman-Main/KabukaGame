@@ -14,11 +14,10 @@ public class PlayerColor : MonoBehaviour
 
     [SerializeField] private ActiveColor color = currentColor;
     
-    private Renderer playerMeshRenderer;
+    public Material playerMaterial;
 
     private void Awake()
     {
-        playerMeshRenderer = GetComponent<Renderer>();
         SetPlayerColor();
     }
 
@@ -45,16 +44,16 @@ public class PlayerColor : MonoBehaviour
         switch (currentColor)
         {
             case ActiveColor.Red:
-                //playerMeshRenderer.material.color = Color.red;
-                //color = ActiveColor.Red;
+                playerMaterial.color = Color.red;
+                color = ActiveColor.Red;
                 break;
             case ActiveColor.Green:
-                //playerMeshRenderer.material.color = Color.green;
-                //color = ActiveColor.Green;
+                playerMaterial.color = Color.green;
+                color = ActiveColor.Green;
                 break;
             case ActiveColor.Blue:
-                //playerMeshRenderer.material.color = Color.blue;
-                //color = ActiveColor.Blue;
+                playerMaterial.color = Color.blue;
+                color = ActiveColor.Blue;
                 break;
         }
     }

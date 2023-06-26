@@ -41,7 +41,6 @@ namespace Player
 
         public void Update()
         {
-            Debug.Log(GroundCheck());
             if (isDashing) return;
             _movement.Move(_inputService.Axis, _rigidbody, _joystickInput);
             _movement.Flip(ref _isRight, transform, _inputService.HorizontalRaw + _joystickInput.Horizontal);
