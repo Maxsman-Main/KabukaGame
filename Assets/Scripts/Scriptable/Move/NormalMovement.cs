@@ -34,13 +34,22 @@ namespace Scriptable.Move
             isRight = !isRight;
         }
 
-        public override void Jump(bool isGrounded, float jumpForce, Rigidbody rigidbody)
+        public override void Jump(bool isGrounded, float jumpForce, Rigidbody rigidbody, Animator animator)
         {
-            if (isGrounded) coyoteTimeCounter = 0.2f;
-                else coyoteTimeCounter -= Time.deltaTime;
+            if (isGrounded)
+            {
+                coyoteTimeCounter = 0.2f;
+                animator.SetBool("isJumping", false);
+            }
+            else
+            {
+                animator.SetBool("isJumping", true);
+                coyoteTimeCounter -= Time.deltaTime;
+            }
 
             if (jumpClick.isUIButtonDown || Input.GetButtonDown("Jump"))
             {
+                animator.SetBool("isJumping", true);
                 jumpBufferCounter = 0.2f;
                 jumpClick.isUIButtonDown = false;
             }
@@ -53,7 +62,8 @@ namespace Scriptable.Move
                 jumpBufferCounter = 0f;
             }
             
-            if ((Input.GetButtonUp("Jump") && rigidbody.velocity.y > 0f) || jumpClick.isUIButtonUp)
+            
+            if ((Input.GetButtonUp("Jump") || jumpClick.isUIButtonUp) && rigidbody.velocity.y > -0.5f )
             {
                 jumpClick.isUIButtonUp = false;
                 rigidbody.velocity = new Vector2(rigidbody.velocity.x, rigidbody.velocity.y * 0.5f);
@@ -61,9 +71,9 @@ namespace Scriptable.Move
             }
         }
 
-        public override IEnumerator Dash(float dashingPower, float dashingTime, float dashingCooldown, Rigidbody rigidbody, Transform transform, bool isRight)
+        public override IEnumerator Dash(float dashingPower, float dashingTime, float dashingCooldown, Rigidbody rigidbody, Transform transform, bool isRight, Animator animator)
         {
-            PlayerMovement _playerMovement = transform.gameObject.GetComponent<PlayerMovement>(); //TODO: fix meh code with Zenject
+            PlayerMovement _playerMovement = transform.gameObject.GetComponent<PlayerMovement>();
             _playerMovement.canDash = false;
             
             _playerMovement.isDashing = true;
@@ -74,7 +84,7 @@ namespace Scriptable.Move
                 ? new Vector2(transform.localScale.x * dashingPower, 0f)
                 : new Vector2(-transform.localScale.x * dashingPower, 0f);
             yield return new WaitForSeconds(dashingTime);
-            
+            animator.SetBool("isDashing", false);
             rigidbody.useGravity = true;
             
             _playerMovement.isDashing = false;

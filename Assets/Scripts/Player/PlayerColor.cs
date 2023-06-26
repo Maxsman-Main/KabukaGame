@@ -45,16 +45,16 @@ public class PlayerColor : MonoBehaviour
         switch (currentColor)
         {
             case ActiveColor.Red:
-                playerMeshRenderer.material.color = Color.red;
-                color = ActiveColor.Red;
+                //playerMeshRenderer.material.color = Color.red;
+                //color = ActiveColor.Red;
                 break;
             case ActiveColor.Green:
-                playerMeshRenderer.material.color = Color.green;
-                color = ActiveColor.Green;
+                //playerMeshRenderer.material.color = Color.green;
+                //color = ActiveColor.Green;
                 break;
             case ActiveColor.Blue:
-                playerMeshRenderer.material.color = Color.blue;
-                color = ActiveColor.Blue;
+                //playerMeshRenderer.material.color = Color.blue;
+                //color = ActiveColor.Blue;
                 break;
         }
     }

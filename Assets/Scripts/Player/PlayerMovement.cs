@@ -1,4 +1,5 @@
-﻿using Scriptable.Move;
+﻿using System;
+using Scriptable.Move;
 using Services.InputService;
 using UnityEngine;
 using UnityEngine.UI;
@@ -12,6 +13,7 @@ namespace Player
         [Inject] private IInputService _inputService;
         [Inject] private Movement _movement;
         [Inject] private JoystickInput _joystickInput;
+        [Inject] private Animator animator;
         
         [SerializeField] private Button _dashbtn;
         [SerializeField] private float jumpForce = 3f;
@@ -39,17 +41,22 @@ namespace Player
 
         public void Update()
         {
+            Debug.Log(GroundCheck());
             if (isDashing) return;
             _movement.Move(_inputService.Axis, _rigidbody, _joystickInput);
             _movement.Flip(ref _isRight, transform, _inputService.HorizontalRaw + _joystickInput.Horizontal);
-            _movement.Jump(GroundCheck(), jumpForce, _rigidbody);
+            _movement.Jump(GroundCheck(), jumpForce, _rigidbody, animator);
             if ((dashBtn || Input.GetButtonDown("Dash")) && canDash)
             {
+                animator.SetBool("isDashing", true);
                 dashBtn = false;
-                StartCoroutine( _movement.Dash(dashingPower, dashingTime, dashingCooldown, _rigidbody, transform, _isRight));
+                StartCoroutine( _movement.Dash(dashingPower, dashingTime, dashingCooldown, _rigidbody, transform, _isRight, animator));
             }
             if (canDash)
+            {
                 _dashbtn.interactable = true;
+            }
+            animator.SetFloat("Run", Math.Abs(_inputService.Axis.x + _joystickInput.Horizontal));
         }
 
         private bool GroundCheck()
