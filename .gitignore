@@ -73,3 +73,7 @@ crashlytics-build.properties
 .idea/
 
 ProjectSettings/
+Assets/Scenes/Lighting.unity
+Assets/Scenes/Lighting.unity.meta
+Assets/Scenes/Test.unity
+Assets/Scenes/Test.unity.meta
