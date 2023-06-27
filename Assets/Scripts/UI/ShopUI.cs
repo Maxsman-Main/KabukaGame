@@ -13,14 +13,14 @@ public class ShopUI : MonoBehaviour
     {
         resourceData = Load<ResourceData>("ResourceData") ?? new ResourceData();
         hpData = Load<HealthData>("HealthData") ?? new HealthData();
-        gameObject.GetComponent<Text>().text = "Res: " + resourceData.resource;
+        gameObject.GetComponent<Text>().text = " " + resourceData.resource;
     }
 
     private void SaveData()
     {
         Save("ResourceData", resourceData);
         Save("HealthData", hpData);
-        gameObject.GetComponent<Text>().text = "Res: " + resourceData.resource;
+        gameObject.GetComponent<Text>().text = " " + resourceData.resource;
     }
 
     private T Load<T>(string key)

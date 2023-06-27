@@ -16,7 +16,7 @@ public class ResourceUI : MonoBehaviour
     }
     private void TextHpUpdate(int value)
     {
-        _text.text = $"Res: {value}";
+        _text.text = $" {value}";
     }
     
     private void OnDestroy()

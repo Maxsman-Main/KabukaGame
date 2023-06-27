@@ -19,7 +19,7 @@ public class HpUI : MonoBehaviour
 
     private void TextHpUpdate(int value)
     {
-        _text.text = $"HP: {value}";
+        _text.text = $" {value}";
     }
     
     private void OnDestroy()
