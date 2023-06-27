@@ -11,6 +11,7 @@ namespace Level
         [SerializeField] private int levelSize;
         
         [Inject] private IGenerator _generator;
+        [Inject] private ResourceManager resourceManager;
         
         private List<GameObject> _levels;
         private int _currentLevel;
@@ -25,6 +26,7 @@ namespace Level
             if (_currentLevel >= _levels.Count)
             {
                 LevelPoolIsEnded?.Invoke();
+                resourceManager.SaveResourceData();
                 return;
             }
 

@@ -35,18 +35,9 @@ public class ResourceManager : MonoBehaviour
     public void AddResource(int amount)
     {
         resourceData.resource += amount;
-        SaveResourceData();
         ResourceChanged?.Invoke(Resources);
     }
-
-    public void SubtractResource(int amount)
-    {
-        resourceData.resource -= amount;
-        SaveResourceData();
-        ResourceChanged?.Invoke(Resources);
-    }
-
-    private void SaveResourceData()
+    public void SaveResourceData()
     {
         saveManager.Save(saveKey, resourceData);
     }
