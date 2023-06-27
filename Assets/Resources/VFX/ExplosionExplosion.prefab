@@ -4998,6 +4998,10 @@ PrefabInstance:
       value: SparkExplosion
       objectReference: {fileID: 0}
     - target: {fileID: 8433909331927933989, guid: 23b7ba0ebe88dad41b37c1595a645d89, type: 3}
+      propertyPath: looping
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8433909331927933989, guid: 23b7ba0ebe88dad41b37c1595a645d89, type: 3}
       propertyPath: InitialModule.startSpeed.scalar
       value: 10
       objectReference: {fileID: 0}
