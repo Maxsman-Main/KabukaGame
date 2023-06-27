@@ -14,6 +14,7 @@ namespace Level
         {
             levelMaker.OneLevelIsDone += TeleportPlayerOnPatternStart;
             playerPatternEndTracker.OnEndPattern += levelMaker.ShowNextPattern;
+            levelMaker.LevelPoolIsEnded += ScenesManager.LoadShop;
             levelMaker.ShowNextPattern();
         }
 

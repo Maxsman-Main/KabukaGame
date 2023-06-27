@@ -11,8 +11,8 @@ GameObject:
   - component: {fileID: 2363855470020310515}
   - component: {fileID: 1684840576222214742}
   - component: {fileID: 3496260996642852508}
-  - component: {fileID: 9028044325471571451}
   - component: {fileID: 1158526036521756141}
+  - component: {fileID: 3101726316594367372}
   m_Layer: 0
   m_Name: Spilkes1x1Normal
   m_TagString: Untagged
@@ -85,20 +85,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!64 &9028044325471571451
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3136135547234086729}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: -8162792875608667267, guid: 2027b7f5b35abca43af410803e2ebe87, type: 3}
 --- !u!114 &1158526036521756141
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -112,3 +98,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   amount: 1
+--- !u!65 &3101726316594367372
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3136135547234086729}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1.298392, y: 1.120543, z: 1.1445482}
+  m_Center: {x: 0.034296155, y: -0.034172565, z: -0.00765422}
