@@ -2133,10 +2133,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 1806756186, guid: dd61d8799a155874e82346e7ed157a8a, type: 3}
-      propertyPath: playerMaterial
-      value: 
-      objectReference: {fileID: 2100000, guid: ae11d341076be6749b0c66c7aaa28334, type: 2}
     - target: {fileID: 3114359888090252084, guid: dd61d8799a155874e82346e7ed157a8a, type: 3}
       propertyPath: _dashbtn
       value: 

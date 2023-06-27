@@ -20,6 +20,8 @@ namespace Player
         [SerializeField] private float dashingPower = 20f;
         [SerializeField] private float dashingTime = 0.2f;
         [SerializeField] private float dashingCooldown = 1f;
+        
+        private const float RadiusGround = 0.2f;
 
         private Transform _groundCheck;
         private Rigidbody _rigidbody;
@@ -60,7 +62,7 @@ namespace Player
 
         private bool GroundCheck()
         {
-            return Physics.CheckSphere(_groundCheck.position, .1f, _groundLayer);
+            return Physics.CheckSphere(_groundCheck.position, RadiusGround, _groundLayer);
         }
 
         public void DashBtn()

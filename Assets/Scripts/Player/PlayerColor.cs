@@ -58,11 +58,11 @@ public class PlayerColor : MonoBehaviour
         }
     }
 
-    public static bool CanInteractWithObject(Color objectColor)
+    public static bool CanInteractWithObject(ActiveColor objectColor)
     {
-        return (currentColor == ActiveColor.Red && objectColor == Color.red) ||
-               (currentColor == ActiveColor.Green && objectColor == Color.green) ||
-               (currentColor == ActiveColor.Blue && objectColor == Color.blue);
+        return (currentColor == ActiveColor.Red && objectColor == ActiveColor.Red) ||
+               (currentColor == ActiveColor.Green && objectColor == ActiveColor.Green) ||
+               (currentColor == ActiveColor.Blue && objectColor == ActiveColor.Blue);
     }
 
     private void Update()
