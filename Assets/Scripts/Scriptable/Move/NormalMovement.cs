@@ -50,6 +50,7 @@ namespace Scriptable.Move
             if (jumpClick.isUIButtonDown || Input.GetButtonDown("Jump"))
             {
                 animator.SetBool("isJumping", true);
+                
                 jumpBufferCounter = 0.2f;
                 jumpClick.isUIButtonDown = false;
             }

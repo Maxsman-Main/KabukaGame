@@ -57,7 +57,17 @@ namespace Player
             {
                 _dashbtn.interactable = true;
             }
-            animator.SetFloat("Run", Math.Abs(_inputService.Axis.x + _joystickInput.Horizontal));
+
+            var speedFloat = Math.Abs(_inputService.Axis.x + _joystickInput.Horizontal);
+            animator.SetFloat("Run", speedFloat);
+            if (speedFloat > 0 && GroundCheck())
+            {
+                SoundManager.Instance.PlayFootstep();
+            }
+            else
+            {
+                SoundManager.Instance.StopFootstep();
+            }
         }
 
         private bool GroundCheck()
