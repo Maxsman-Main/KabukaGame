@@ -73,3 +73,16 @@ crashlytics-build.properties
 .idea/
 
 ProjectSettings/
+Assets/Scenes/GameLight.lighting
+Assets/Scenes/GameLight.lighting.meta
+Assets/Scenes/Light Test.meta
+Assets/Scenes/Light Test.unity
+Assets/Scenes/Light Test.unity.meta
+Assets/Scenes/Light Test/LightingData.asset
+Assets/Scenes/Light Test/LightingData.asset.meta
+Assets/Scenes/Light Test/Lightmap-0_comp_dir.png
+Assets/Scenes/Light Test/Lightmap-0_comp_dir.png.meta
+Assets/Scenes/Light Test/Lightmap-0_comp_light.exr
+Assets/Scenes/Light Test/Lightmap-0_comp_light.exr.meta
+Assets/Scenes/Light Test/ReflectionProbe-0.exr
+Assets/Scenes/Light Test/ReflectionProbe-0.exr.meta
