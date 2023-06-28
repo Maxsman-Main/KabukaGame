@@ -46,16 +46,19 @@ public class PlayerColor : MonoBehaviour
             case ActiveColor.Red:
                 ColorUtility.TryParseHtmlString("#CC8888", out var red);
                 playerMaterial.color = red;
+                playerMaterial.SetColor("_EmissionColor", Color.red);
                 color = ActiveColor.Red;
                 break;
             case ActiveColor.Green:
                 ColorUtility.TryParseHtmlString("#94B094", out var green);
                 playerMaterial.color = green;
+                playerMaterial.SetColor("_EmissionColor", Color.green);
                 color = ActiveColor.Green;
                 break;
             case ActiveColor.Blue:
                 ColorUtility.TryParseHtmlString("#9F9FD6", out var blue);
                 playerMaterial.color = blue;
+                playerMaterial.SetColor("_EmissionColor", Color.blue);
                 color = ActiveColor.Blue;
                 break;
         }
