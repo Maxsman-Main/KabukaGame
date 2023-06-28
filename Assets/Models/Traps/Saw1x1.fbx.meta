@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: c8c1d822ec6cd74459331019d7b7f6b2
+guid: a4f33e28b860d924791c1f9139051eed
 ModelImporter:
   serializedVersion: 21300
   internalIDToNameTable: []
@@ -7,8 +7,8 @@ ModelImporter:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
-      name: bot
-    second: {fileID: 2100000, guid: 84a17d52f381e354fbc8b41d93af74cf, type: 2}
+      name: GameObjects
+    second: {fileID: 2100000, guid: 242ace1f9f7b79d44b96145035ea0429, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0

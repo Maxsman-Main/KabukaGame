@@ -44,15 +44,18 @@ public class PlayerColor : MonoBehaviour
         switch (currentColor)
         {
             case ActiveColor.Red:
-                playerMaterial.color = Color.red;
+                ColorUtility.TryParseHtmlString("#CC8888", out var red);
+                playerMaterial.color = red;
                 color = ActiveColor.Red;
                 break;
             case ActiveColor.Green:
-                playerMaterial.color = Color.green;
+                ColorUtility.TryParseHtmlString("#94B094", out var green);
+                playerMaterial.color = green;
                 color = ActiveColor.Green;
                 break;
             case ActiveColor.Blue:
-                playerMaterial.color = Color.blue;
+                ColorUtility.TryParseHtmlString("#9F9FD6", out var blue);
+                playerMaterial.color = blue;
                 color = ActiveColor.Blue;
                 break;
         }
