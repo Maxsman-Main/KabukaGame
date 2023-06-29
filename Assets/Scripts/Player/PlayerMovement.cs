@@ -23,6 +23,7 @@ namespace Player
         
         private const float RadiusGround = 0.2f;
 
+        private ParticleSystem _particleSystem;
         private Transform _groundCheck;
         private Rigidbody _rigidbody;
         private bool _isRight;
@@ -36,6 +37,7 @@ namespace Player
             _rigidbody = GetComponent<Rigidbody>();
             _groundLayer = LayerMask.GetMask("Ground");
             _groundCheck = GetComponentInChildren<Transform>().GetChild(0);
+            _particleSystem = GetComponentInChildren<Transform>().GetChild(2).GetComponent<ParticleSystem>();
             _isRight = true;
             canDash = true;
             dashBtn = false;
@@ -63,10 +65,12 @@ namespace Player
             if (speedFloat > 0 && GroundCheck())
             {
                 SoundManager.Instance.PlayFootstep();
+                _particleSystem.Play();
             }
             else
             {
                 SoundManager.Instance.StopFootstep();
+                _particleSystem.Stop();
             }
         }
 

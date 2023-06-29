@@ -2527,6 +2527,22 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 7940578475169700113, guid: dd61d8799a155874e82346e7ed157a8a, type: 3}
+      propertyPath: InitialModule.startSpeed.scalar
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7940578475169700113, guid: dd61d8799a155874e82346e7ed157a8a, type: 3}
+      propertyPath: InitialModule.startSpeed.minScalar
+      value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7940578475169700114, guid: dd61d8799a155874e82346e7ed157a8a, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.71
+      objectReference: {fileID: 0}
+    - target: {fileID: 7940578475169700114, guid: dd61d8799a155874e82346e7ed157a8a, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.285
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: dd61d8799a155874e82346e7ed157a8a, type: 3}
 --- !u!114 &1549978527 stripped
