@@ -2528,12 +2528,16 @@ PrefabInstance:
       value: Player
       objectReference: {fileID: 0}
     - target: {fileID: 7940578475169700113, guid: dd61d8799a155874e82346e7ed157a8a, type: 3}
-      propertyPath: InitialModule.startSpeed.scalar
+      propertyPath: moveWithTransform
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7940578475169700113, guid: dd61d8799a155874e82346e7ed157a8a, type: 3}
+      propertyPath: InitialModule.startSpeed.scalar
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7940578475169700113, guid: dd61d8799a155874e82346e7ed157a8a, type: 3}
       propertyPath: InitialModule.startSpeed.minScalar
-      value: 0.1
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7940578475169700114, guid: dd61d8799a155874e82346e7ed157a8a, type: 3}
       propertyPath: m_LocalPosition.x

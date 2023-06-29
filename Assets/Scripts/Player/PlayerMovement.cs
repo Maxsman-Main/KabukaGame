@@ -65,13 +65,16 @@ namespace Player
             if (speedFloat > 0 && GroundCheck())
             {
                 SoundManager.Instance.PlayFootstep();
-                _particleSystem.Play();
             }
             else
             {
                 SoundManager.Instance.StopFootstep();
-                _particleSystem.Stop();
             }
+            if (!GroundCheck())
+                _particleSystem.Stop();
+            else
+                if (!_particleSystem.isPlaying)
+                    _particleSystem.Play();
         }
 
         private bool GroundCheck()
