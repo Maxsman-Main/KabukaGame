@@ -130,49 +130,9 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 1780073507105396763, guid: 2029b5252ac0fe446bbeeb4948f7fc9c, type: 3}
-      propertyPath: m_StaticEditorFlags
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2244616399403049139, guid: 2029b5252ac0fe446bbeeb4948f7fc9c, type: 3}
-      propertyPath: m_StaticEditorFlags
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4573617760948732831, guid: 2029b5252ac0fe446bbeeb4948f7fc9c, type: 3}
-      propertyPath: m_StaticEditorFlags
-      value: 127
-      objectReference: {fileID: 0}
-    - target: {fileID: 7009624974094858873, guid: 2029b5252ac0fe446bbeeb4948f7fc9c, type: 3}
-      propertyPath: m_StaticEditorFlags
-      value: 127
-      objectReference: {fileID: 0}
-    - target: {fileID: 7593404652503959074, guid: 2029b5252ac0fe446bbeeb4948f7fc9c, type: 3}
-      propertyPath: m_ReceiveGI
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7593404652503959074, guid: 2029b5252ac0fe446bbeeb4948f7fc9c, type: 3}
-      propertyPath: m_ImportantGI
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7593404652503959074, guid: 2029b5252ac0fe446bbeeb4948f7fc9c, type: 3}
-      propertyPath: m_AutoUVMaxAngle
-      value: 84
-      objectReference: {fileID: 0}
-    - target: {fileID: 7593404652503959074, guid: 2029b5252ac0fe446bbeeb4948f7fc9c, type: 3}
-      propertyPath: m_ReceiveShadows
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7593404652503959074, guid: 2029b5252ac0fe446bbeeb4948f7fc9c, type: 3}
-      propertyPath: m_ScaleInLightmap
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 8242094454721456119, guid: 2029b5252ac0fe446bbeeb4948f7fc9c, type: 3}
       propertyPath: m_Name
       value: Background 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8242094454721456119, guid: 2029b5252ac0fe446bbeeb4948f7fc9c, type: 3}
-      propertyPath: m_StaticEditorFlags
-      value: 127
       objectReference: {fileID: 0}
     - target: {fileID: 8730823333673958733, guid: 2029b5252ac0fe446bbeeb4948f7fc9c, type: 3}
       propertyPath: m_RootOrder
@@ -217,38 +177,6 @@ PrefabInstance:
     - target: {fileID: 8730823333673958733, guid: 2029b5252ac0fe446bbeeb4948f7fc9c, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 9124474183162684908, guid: 2029b5252ac0fe446bbeeb4948f7fc9c, type: 3}
-      propertyPath: m_StaticEditorFlags
-      value: 127
-      objectReference: {fileID: 0}
-    - target: {fileID: 9124474183879382740, guid: 2029b5252ac0fe446bbeeb4948f7fc9c, type: 3}
-      propertyPath: m_StaticEditorFlags
-      value: 127
-      objectReference: {fileID: 0}
-    - target: {fileID: 9124474184338022883, guid: 2029b5252ac0fe446bbeeb4948f7fc9c, type: 3}
-      propertyPath: m_StaticEditorFlags
-      value: 127
-      objectReference: {fileID: 0}
-    - target: {fileID: 9124474184445577348, guid: 2029b5252ac0fe446bbeeb4948f7fc9c, type: 3}
-      propertyPath: m_StaticEditorFlags
-      value: 127
-      objectReference: {fileID: 0}
-    - target: {fileID: 9124474184744684969, guid: 2029b5252ac0fe446bbeeb4948f7fc9c, type: 3}
-      propertyPath: m_StaticEditorFlags
-      value: 127
-      objectReference: {fileID: 0}
-    - target: {fileID: 9124474184856179848, guid: 2029b5252ac0fe446bbeeb4948f7fc9c, type: 3}
-      propertyPath: m_StaticEditorFlags
-      value: 127
-      objectReference: {fileID: 0}
-    - target: {fileID: 9124474184858660068, guid: 2029b5252ac0fe446bbeeb4948f7fc9c, type: 3}
-      propertyPath: m_StaticEditorFlags
-      value: 127
-      objectReference: {fileID: 0}
-    - target: {fileID: 9124474184988756949, guid: 2029b5252ac0fe446bbeeb4948f7fc9c, type: 3}
-      propertyPath: m_StaticEditorFlags
-      value: 127
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2029b5252ac0fe446bbeeb4948f7fc9c, type: 3}
