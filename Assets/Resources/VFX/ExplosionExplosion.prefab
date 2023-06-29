@@ -4975,6 +4975,58 @@ PrefabInstance:
       propertyPath: ShapeModule.radius.value
       value: 0.25
       objectReference: {fileID: 0}
+    - target: {fileID: 4825329332613571706, guid: 233de79aa46ba3347a353a0702872ca1, type: 3}
+      propertyPath: InitialModule.startColor.maxGradient.ctime0
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4825329332613571706, guid: 233de79aa46ba3347a353a0702872ca1, type: 3}
+      propertyPath: InitialModule.startColor.maxGradient.ctime1
+      value: 14264
+      objectReference: {fileID: 0}
+    - target: {fileID: 4825329332613571706, guid: 233de79aa46ba3347a353a0702872ca1, type: 3}
+      propertyPath: InitialModule.startColor.maxGradient.ctime2
+      value: 51079
+      objectReference: {fileID: 0}
+    - target: {fileID: 4825329332613571706, guid: 233de79aa46ba3347a353a0702872ca1, type: 3}
+      propertyPath: InitialModule.startColor.maxGradient.key0.b
+      value: 0.2735849
+      objectReference: {fileID: 0}
+    - target: {fileID: 4825329332613571706, guid: 233de79aa46ba3347a353a0702872ca1, type: 3}
+      propertyPath: InitialModule.startColor.maxGradient.key0.g
+      value: 0.2735849
+      objectReference: {fileID: 0}
+    - target: {fileID: 4825329332613571706, guid: 233de79aa46ba3347a353a0702872ca1, type: 3}
+      propertyPath: InitialModule.startColor.maxGradient.key0.r
+      value: 0.2735849
+      objectReference: {fileID: 0}
+    - target: {fileID: 4825329332613571706, guid: 233de79aa46ba3347a353a0702872ca1, type: 3}
+      propertyPath: InitialModule.startColor.maxGradient.key1.b
+      value: 0.5471698
+      objectReference: {fileID: 0}
+    - target: {fileID: 4825329332613571706, guid: 233de79aa46ba3347a353a0702872ca1, type: 3}
+      propertyPath: InitialModule.startColor.maxGradient.key1.g
+      value: 0.5471698
+      objectReference: {fileID: 0}
+    - target: {fileID: 4825329332613571706, guid: 233de79aa46ba3347a353a0702872ca1, type: 3}
+      propertyPath: InitialModule.startColor.maxGradient.key1.r
+      value: 0.5471698
+      objectReference: {fileID: 0}
+    - target: {fileID: 4825329332613571706, guid: 233de79aa46ba3347a353a0702872ca1, type: 3}
+      propertyPath: InitialModule.startColor.maxGradient.key2.b
+      value: 0.80582255
+      objectReference: {fileID: 0}
+    - target: {fileID: 4825329332613571706, guid: 233de79aa46ba3347a353a0702872ca1, type: 3}
+      propertyPath: InitialModule.startColor.maxGradient.key2.g
+      value: 0.80582255
+      objectReference: {fileID: 0}
+    - target: {fileID: 4825329332613571706, guid: 233de79aa46ba3347a353a0702872ca1, type: 3}
+      propertyPath: InitialModule.startColor.maxGradient.key2.r
+      value: 0.80582255
+      objectReference: {fileID: 0}
+    - target: {fileID: 4825329332613571706, guid: 233de79aa46ba3347a353a0702872ca1, type: 3}
+      propertyPath: InitialModule.startColor.maxGradient.m_NumColorKeys
+      value: 4
+      objectReference: {fileID: 0}
     - target: {fileID: 4825329332613571708, guid: 233de79aa46ba3347a353a0702872ca1, type: 3}
       propertyPath: m_Name
       value: SmokeExplosion
