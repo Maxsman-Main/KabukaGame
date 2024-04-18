@@ -18,9 +18,10 @@ namespace Level
             levelMaker.ShowNextPattern();
         }
 
-        private void TeleportPlayerOnPatternStart(Transform point)
+        public void TeleportPlayerOnPatternStart(Transform point)
         {
             player.transform.position = point.position;
+            player.GetComponent<Rigidbody>().velocity = Vector3.zero; //Make stop player
         }
     }
 }
