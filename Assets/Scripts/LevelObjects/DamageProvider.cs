@@ -25,7 +25,6 @@ public class DamageProvider : MonoBehaviour
     
     private void TeleportPlayerOnPatternStart(Transform point)
     {
-
         _player.gameObject.transform.position = point.position;
         _player.GetComponent<Rigidbody>().velocity = Vector3.zero;
     }
