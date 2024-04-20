@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class ButtonDoorController : MonoBehaviour
 {
-    public bool _isActivated = false;
+    protected internal bool _isActivated;
     public Action<ButtonDoorController> OnDoorButtonPress;
 
     private void OnTriggerEnter(Collider other)
