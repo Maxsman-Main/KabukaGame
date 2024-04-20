@@ -13,7 +13,7 @@ public class PlayerTemperature : MonoBehaviour
     public float temperatureThreshold = 100f;
     private int _amountDamage = 1;
     
-    [SerializeField] private float currentTemperature = 0f;
+    public float currentTemperature = 0f;
     
     [Inject] private LevelController _levelController;
     
