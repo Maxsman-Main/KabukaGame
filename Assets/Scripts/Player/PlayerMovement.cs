@@ -2,6 +2,7 @@
 using Scriptable.Move;
 using Services.InputService;
 using UnityEngine;
+using UnityEngine.Serialization;
 using UnityEngine.UI;
 using Zenject;
 
@@ -26,7 +27,7 @@ namespace Player
         private ParticleSystem _particleSystem;
         private Transform _groundCheck;
         private Rigidbody _rigidbody;
-        private bool _isRight;
+        public bool isFlip;
         private bool dashBtn;
         public bool canDash { get; set; }
         public bool isDashing { get; set; }
@@ -38,7 +39,7 @@ namespace Player
             _groundLayer = LayerMask.GetMask("Ground");
             _groundCheck = GetComponentInChildren<Transform>().GetChild(0);
             _particleSystem = GetComponentInChildren<Transform>().GetChild(2).GetComponent<ParticleSystem>();
-            _isRight = true;
+            isFlip = true;
             canDash = true;
             dashBtn = false;
         }
@@ -47,13 +48,13 @@ namespace Player
         {
             if (isDashing) return;
             _movement.Move(_inputService.Axis, _rigidbody, _joystickInput);
-            _movement.Flip(ref _isRight, transform, _inputService.HorizontalRaw + _joystickInput.Horizontal);
+            _movement.Flip(ref isFlip, transform, _inputService.HorizontalRaw + _joystickInput.Horizontal);
             _movement.Jump(GroundCheck(), jumpForce, _rigidbody, animator);
             if ((dashBtn || Input.GetButtonDown("Dash")) && canDash)
             {
                 animator.SetBool("isDashing", true);
                 dashBtn = false;
-                StartCoroutine( _movement.Dash(dashingPower, dashingTime, dashingCooldown, _rigidbody, transform, _isRight, animator));
+                StartCoroutine( _movement.Dash(dashingPower, dashingTime, dashingCooldown, _rigidbody, transform, isFlip, animator));
             }
             if (canDash)
             {
