@@ -11,7 +11,7 @@ public class GameOverManager : MonoBehaviour
         CountdownTimer.onTimerExpired += GameOver;
     }
 
-    private void GameOver()
+    public static void GameOver()
     {
         ScenesManager.LoadShop();
     }
