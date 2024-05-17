@@ -27,9 +27,10 @@ namespace Level
             {
                 LevelPoolIsEnded?.Invoke();
                 resourceManager.SaveResourceData();
+                if (int.Parse(PlayerPrefs.GetString("NextLevel")[^1].ToString()) == PlayerPrefs.GetInt("LevelAvailable", 1))
+                    PlayerPrefs.SetInt("LevelAvailable", PlayerPrefs.GetInt("LevelAvailable", 1) + 1);
                 return;
             }
-
             Destroy(_currentLevelPrefab);
             _currentLevelPrefab = Instantiate(_levels[_currentLevel]);
             var levelPattern = _currentLevelPrefab.GetComponent<LevelPattern>();

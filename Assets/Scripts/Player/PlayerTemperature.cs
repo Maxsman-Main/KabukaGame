@@ -42,7 +42,5 @@ public class PlayerTemperature : MonoBehaviour
             _levelController.TeleportPlayerOnPatternStart(FindObjectOfType<StartPoint>().transform);
             currentTemperature = 0f;
         }
-        
     }
-
 }
