@@ -33,14 +33,16 @@ public class ButtonDoorController : MonoBehaviour
 
     public void LockButton()
     {
-        transform.GetChild(0).transform.Translate(new Vector3(0, -0.15f, 0f), Space.Self);
+        transform.GetChild(1).GetChild(0).gameObject.SetActive(false);
+        transform.GetChild(0).gameObject.SetActive(true);
         _isActivated = true;
         GetComponent<Collider>().enabled = false;
     }
 
     public void Reset()
     {
-        transform.GetChild(0).transform.Translate(new Vector3(0, 0.15f,0f), Space.Self);
+        transform.GetChild(1).GetChild(0).gameObject.SetActive(true);
+        transform.GetChild(0).gameObject.SetActive(false);
         _isActivated = false;
         GetComponent<Collider>().enabled = true;
     }

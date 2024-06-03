@@ -1308,9 +1308,29 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 7795548674530026383}
     m_Modifications:
+    - target: {fileID: 526068272851223071, guid: 809d4a6619bfa974eb0666a7f83b6f88, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 680417784952648571, guid: 809d4a6619bfa974eb0666a7f83b6f88, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 698375474848772979, guid: 809d4a6619bfa974eb0666a7f83b6f88, type: 3}
       propertyPath: m_Name
       value: Door
+      objectReference: {fileID: 0}
+    - target: {fileID: 698375474848772979, guid: 809d4a6619bfa974eb0666a7f83b6f88, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 837850411664763760, guid: 809d4a6619bfa974eb0666a7f83b6f88, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 1018070528446059271, guid: 809d4a6619bfa974eb0666a7f83b6f88, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 1722399455616838821, guid: 809d4a6619bfa974eb0666a7f83b6f88, type: 3}
       propertyPath: m_RootOrder
@@ -1356,6 +1376,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 90
       objectReference: {fileID: 0}
+    - target: {fileID: 3198032443545777065, guid: 809d4a6619bfa974eb0666a7f83b6f88, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 3247338890314016829, guid: 809d4a6619bfa974eb0666a7f83b6f88, type: 3}
       propertyPath: anotherButton.Array.size
       value: 1
@@ -1380,6 +1404,30 @@ PrefabInstance:
       propertyPath: validSequenceButton.Array.data[2]
       value: 
       objectReference: {fileID: 3941425593094935705}
+    - target: {fileID: 3498814281171134663, guid: 809d4a6619bfa974eb0666a7f83b6f88, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 5684346265531764100, guid: 809d4a6619bfa974eb0666a7f83b6f88, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 5922165512464279071, guid: 809d4a6619bfa974eb0666a7f83b6f88, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 6945752233053202543, guid: 809d4a6619bfa974eb0666a7f83b6f88, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 7074041112994655567, guid: 809d4a6619bfa974eb0666a7f83b6f88, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 7174088483070888749, guid: 809d4a6619bfa974eb0666a7f83b6f88, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 809d4a6619bfa974eb0666a7f83b6f88, type: 3}
 --- !u!4 &849876516606421740 stripped

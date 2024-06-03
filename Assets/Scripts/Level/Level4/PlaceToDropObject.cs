@@ -13,7 +13,7 @@ public class PlaceToDropObject : MonoBehaviour
     }
     private void OnTriggerEnter(Collider other)
     {
-        if (other.GetComponent<ObjectGrabDrop>() is not null && _player.GetComponent<PlayerGrabDrop>()._isGrabObject && transform.childCount < 2)
+        if (other.GetComponent<ObjectGrabDrop>() is not null && _player.GetComponent<PlayerGrabDrop>()._isGrabObject && transform.childCount < 4)
         {
             _player.GetComponent<PlayerGrabDrop>().EnableInteract();
             _player.GetComponent<PlayerGrabDrop>()._placeToDropObject = this;
