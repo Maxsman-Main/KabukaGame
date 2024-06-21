@@ -5,7 +5,7 @@ using UnityEngine;
 public class BackgroundController : MonoBehaviour
 {
     [SerializeField] private List<GameObject> backgrounds;
-
+    [SerializeField] private List<Material> skyboxes;
     private void Start()
     {
         var levelsPath = PlayerPrefs.GetString("NextLevel", "Level1");
