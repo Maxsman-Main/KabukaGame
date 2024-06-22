@@ -12,20 +12,29 @@ public class BackgroundController : MonoBehaviour
         switch (levelsPath)
         {
             case "Level1":
-                backgrounds[0].SetActive(true); 
+                backgrounds[0].SetActive(true);
+                RenderSettings.skybox = skyboxes[0];
                 break;
             case "Level2":
-                backgrounds[1].SetActive(true); 
+                backgrounds[1].SetActive(true);
+                RenderSettings.skybox = skyboxes[1];
                 break;
             case "Level3":
-                backgrounds[2].SetActive(true); 
+                backgrounds[2].SetActive(true);
+                RenderSettings.skybox = skyboxes[2];
                 break;
             case "Level4":
-                backgrounds[3].SetActive(true); 
+                backgrounds[3].SetActive(true);
+                RenderSettings.skybox = skyboxes[3];
                 break;
             case "Level5":
-                backgrounds[4].SetActive(true); 
+                backgrounds[4].SetActive(true);
+                RenderSettings.skybox = skyboxes[4];
                 break;
         }
+
+        //RenderSettings.fogDensity (float)
+        //RenderSettings.fogColor (Color)
     }
+    
 }
