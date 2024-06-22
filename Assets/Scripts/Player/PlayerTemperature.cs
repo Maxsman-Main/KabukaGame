@@ -38,9 +38,14 @@ public class PlayerTemperature : MonoBehaviour
 
         if (currentTemperature >= temperatureThreshold)
         {
-            Health.Instance.GetDamage(_amountDamage);
-            _levelController.TeleportPlayerOnPatternStart(FindObjectOfType<StartPoint>().transform);
-            currentTemperature = 0f;
+            PlayerDie();
         }
+    }
+
+    void PlayerDie()
+    {
+        Health.Instance.GetDamage(_amountDamage);
+        _levelController.TeleportPlayerOnPatternStart(FindObjectOfType<StartPoint>().transform);
+        currentTemperature = 0f;
     }
 }
