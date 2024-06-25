@@ -11,9 +11,5 @@ public class EventProvider : MonoBehaviour
     void Start()
     {
         IsGameFinish += WinGame.WinGameEnable;  
-        if (PlayerPrefs.GetInt("WinGame", 0) == 0)
-        {
-             
-        }
     }
 }
