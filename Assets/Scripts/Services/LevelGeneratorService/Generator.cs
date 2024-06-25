@@ -10,23 +10,29 @@ namespace Services.LevelGeneratorService
 {
     public class Generator : IGenerator
     {
-        private const string LevelsPath = "Levels/Level1";
+        private string _levelsPath;
         
         [Inject] private IResourceLoader _resourceLoader;
+
+        public Generator()
+        {
+            _levelsPath = "Levels/" + PlayerPrefs.GetString("NextLevel", "Level1");
+        }
         
         public List<GameObject> GenerateLevelWithoutParameters()
         {
-            GameObject[] levels = _resourceLoader.LoadPrefabs(LevelsPath);
+            GameObject[] levels = _resourceLoader.LoadPrefabs(_levelsPath);
             var levelsList = levels.ToList();
             return levelsList;
         }
 
         public List<GameObject> GenerateRandomLevel(int size)
         {
-            GameObject[] levels = _resourceLoader.LoadPrefabs(LevelsPath);
+            GameObject[] levels = _resourceLoader.LoadPrefabs(_levelsPath);
             var generatedLevels = new List<GameObject>();
             var levelsList = levels.ToList();
             var difficultList = MakeDifficultList(levelsList);
+
             var random = new Random();
             
             for (int i = 0; i < size; i++)
@@ -42,7 +48,6 @@ namespace Services.LevelGeneratorService
                     difficultList.RemoveAt(index);
                 }
             }
-
             return generatedLevels;
         }
 

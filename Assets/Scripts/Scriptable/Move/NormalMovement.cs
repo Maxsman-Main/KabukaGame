@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using Player;
 using UnityEngine;
+using UnityEngine.EventSystems;
 using Zenject;
 
 namespace Scriptable.Move
@@ -13,10 +14,12 @@ namespace Scriptable.Move
         
         private float coyoteTimeCounter;
         private float jumpBufferCounter;
+        
+        
 
-        public override void Move(Vector3 input, Rigidbody rigidbody)
+        public override void Move(Vector3 input, Rigidbody rigidbody, JoystickInput joystickInput)
         {
-            Vector2 newVelocity = new Vector2(input.x * movementSpeed, rigidbody.velocity.y); 
+            Vector2 newVelocity = new Vector2((input.x + joystickInput.Horizontal) * movementSpeed, rigidbody.velocity.y); 
             rigidbody.velocity = newVelocity;
         }
 
@@ -31,30 +34,47 @@ namespace Scriptable.Move
             isRight = !isRight;
         }
 
-        public override void Jump(bool isGrounded, float jumpForce, Rigidbody rigidbody)
+        public override void Jump(bool isGrounded, float jumpForce, Rigidbody rigidbody, Animator animator)
         {
-            if (isGrounded) coyoteTimeCounter = 0.2f;
-                else coyoteTimeCounter -= Time.deltaTime;
+            if (isGrounded)
+            {
+                coyoteTimeCounter = 0.2f;
+                animator.SetBool("isJumping", false);
+            }
+            else
+            {
+                animator.SetBool("isJumping", true);
+                coyoteTimeCounter -= Time.deltaTime;
+            }
 
-            if (Input.GetButtonDown("Jump")) jumpBufferCounter = 0.2f;
-                else jumpBufferCounter -= Time.deltaTime;
-
+            if (jumpClick.isUIButtonDown || Input.GetButtonDown("Jump"))
+            {
+                animator.SetBool("isJumping", true);
+                
+                jumpBufferCounter = 0.2f;
+                jumpClick.isUIButtonDown = false;
+            }
+            else 
+                jumpBufferCounter -= Time.deltaTime;
+            
             if (coyoteTimeCounter > 0f && jumpBufferCounter > 0f)
             {
                 rigidbody.velocity = new Vector2(rigidbody.velocity.x, jumpForce);
                 jumpBufferCounter = 0f;
             }
             
-            if (Input.GetButtonUp("Jump") && rigidbody.velocity.y > 0f)
+            
+            if ((Input.GetButtonUp("Jump") || jumpClick.isUIButtonUp) && rigidbody.velocity.y > -0.5f )
             {
+                jumpClick.isUIButtonUp = false;
                 rigidbody.velocity = new Vector2(rigidbody.velocity.x, rigidbody.velocity.y * 0.5f);
                 coyoteTimeCounter = 0f;
             }
         }
 
-        public override IEnumerator Dash(float dashingPower, float dashingTime, float dashingCooldown, Rigidbody rigidbody, Transform transform, bool isRight)
+        public override IEnumerator Dash(float dashingPower, float dashingTime, float dashingCooldown, Rigidbody rigidbody, Transform transform, bool isRight, Animator animator)
         {
-            PlayerMovement _playerMovement = transform.gameObject.GetComponent<PlayerMovement>(); //TODO: fix meh code with Zenject
+            PlayerMovement _playerMovement = transform.gameObject.GetComponent<PlayerMovement>();
             _playerMovement.canDash = false;
             
             _playerMovement.isDashing = true;
@@ -65,7 +85,7 @@ namespace Scriptable.Move
                 ? new Vector2(transform.localScale.x * dashingPower, 0f)
                 : new Vector2(-transform.localScale.x * dashingPower, 0f);
             yield return new WaitForSeconds(dashingTime);
-            
+            animator.SetBool("isDashing", false);
             rigidbody.useGravity = true;
             
             _playerMovement.isDashing = false;
@@ -74,6 +94,5 @@ namespace Scriptable.Move
             
             _playerMovement.canDash = true;
         }
-        
     }
 }

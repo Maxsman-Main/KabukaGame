@@ -1,6 +1,7 @@
 ﻿using System;
 using Player;
 using UnityEngine;
+using Zenject;
 
 namespace Level
 {
@@ -10,16 +11,22 @@ namespace Level
         [SerializeField] private PlayerPatternEndTracker playerPatternEndTracker;
         [SerializeField] private GameObject player;
         
+        [Inject] private PlayerTemperature _playerTemperature;
+        
         private void Start()
         {
             levelMaker.OneLevelIsDone += TeleportPlayerOnPatternStart;
             playerPatternEndTracker.OnEndPattern += levelMaker.ShowNextPattern;
+            levelMaker.LevelPoolIsEnded += ScenesManager.LoadShop;
             levelMaker.ShowNextPattern();
         }
 
-        private void TeleportPlayerOnPatternStart(Transform point)
+        public void TeleportPlayerOnPatternStart(Transform point)
         {
+            if (_playerTemperature is not null)
+                _playerTemperature.currentTemperature = 0f;
             player.transform.position = point.position;
+            player.GetComponent<Rigidbody>().velocity = Vector3.zero; //Make stop player
         }
     }
 }
