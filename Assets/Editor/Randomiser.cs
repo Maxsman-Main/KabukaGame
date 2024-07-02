@@ -3,11 +3,11 @@ using UnityEditor;
 using Codice.Client.Common.GameUI;
 using UnityEngine.Rendering;
 using UnityEditor.PackageManager;
+using UnityEditor.SceneManagement;
 
 public class Randomizer : EditorWindow
 {
-    int randomX, randomY, randomZ;
-    bool mirrorX, mirrorY, mirrorZ;
+    bool mirrorX, mirrorY, mirrorZ, randomX, randomY, randomZ;
     [MenuItem("Utils/Randomiser")]
     // Start is called before the first frame update
     static void Init()
@@ -18,42 +18,42 @@ public class Randomizer : EditorWindow
     private void OnGUI()
     {
         GUILayout.Label("Add rotation to selected", EditorStyles.boldLabel);
-        randomX = EditorGUILayout.IntSlider("Quater-Rotations on X", randomX, 0, 3);
-        randomY = EditorGUILayout.IntSlider("Quater-Rotations on Y", randomY, 0, 3);
-        randomZ = EditorGUILayout.IntSlider("Quater-Rotations on Z", randomZ, 0, 3);
-        mirrorX = EditorGUILayout.Toggle("Mirror X", mirrorX);
-        mirrorY = EditorGUILayout.Toggle("Mirror Y", mirrorY);
-        mirrorZ = EditorGUILayout.Toggle("Mirror Z", mirrorZ);
+        randomX = EditorGUILayout.Toggle("Rotate on X", randomX);
+        randomY = EditorGUILayout.Toggle("Rotate on Y", randomY);
+        randomZ = EditorGUILayout.Toggle("Rotate on Z", randomZ);
 
-        if (GUILayout.Button("Randomise Rotation"))
+        if (GUILayout.Button("Randomise 90"))
         {
             foreach (GameObject go in Selection.gameObjects)
             {
-                go.transform.rotation = Quaternion.Euler(GetRandomRotations(go.transform.rotation.eulerAngles));
+                Undo.RecordObject(go.transform, "RandomRotation");
+                go.transform.rotation = Quaternion.Euler(GetRandomRotations90(go.transform.rotation.eulerAngles));
             }
+            EditorSceneManager.MarkSceneDirty(EditorSceneManager.GetActiveScene());
         }
 
-        if (GUILayout.Button("Randomise Mirror"))
+        if (GUILayout.Button("Randomise 180"))
         {
             foreach (GameObject go in Selection.gameObjects)
             {
-                go.transform.localScale = GetRandomMirror(go.transform.localScale);
+                Undo.RecordObject(go.transform, "RandomRotation");
+                go.transform.rotation = Quaternion.Euler(GetRandomRotations180(go.transform.rotation.eulerAngles));
             }
         }
     }
-    private Vector3 GetRandomRotations(Vector3 currentRotation)
+    private Vector3 GetRandomRotations90(Vector3 currentRotation)
     {
-        float x = currentRotation.x + Random.Range(0, randomX + 1) * 90f;
-        float y = currentRotation.y + Random.Range(0, randomY + 1) * 90f;
-        float z = currentRotation.z + Random.Range(0, randomZ + 1) * 90f;
+        float x = randomX ? currentRotation.x + Random.Range(0, 4) * 90f : currentRotation.x;
+        float y = randomY ? currentRotation.y + Random.Range(0, 4) * 90f : currentRotation.y;
+        float z = randomZ ? currentRotation.z + Random.Range(0, 4) * 90f : currentRotation.z;
 
         return new Vector3(x, y, z);
     }
-    private Vector3 GetRandomMirror(Vector3 currentScale)
+    private Vector3 GetRandomRotations180(Vector3 currentRotation)
     {
-        float x = mirrorX ? Random.Range(0, 2) * 2 - 1 : currentScale.x;
-        float y = mirrorY ? Random.Range(0, 2) * 2 - 1 : currentScale.y;
-        float z = mirrorZ ? Random.Range(0, 2) * 2 - 1 : currentScale.z;
+        float x = randomX ? currentRotation.x + Random.Range(0, 2) * 180f : currentRotation.x;
+        float y = randomY ? currentRotation.y + Random.Range(0, 2) * 180f : currentRotation.y;
+        float z = randomZ ? currentRotation.z + Random.Range(0, 2) * 180f : currentRotation.z;
 
         return new Vector3(x, y, z);
     }
