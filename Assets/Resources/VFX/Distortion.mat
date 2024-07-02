@@ -95,7 +95,7 @@ Material:
     - _BumpScale: 1
     - _ClearCoatMask: 0
     - _ClearCoatSmoothness: 0
-    - _Color_Intensity: 10
+    - _Color_Intensity: 3
     - _Cull: 2
     - _Cutoff: 0.5
     - _DecalMeshBiasType: 0
@@ -105,7 +105,7 @@ Material:
     - _DetailNormalMapScale: 1
     - _Distortion_Speed_X: 0.09
     - _Distortion_Speed_Y: 0.312
-    - _Distortion_Strength: 0.569
+    - _Distortion_Strength: 0.06
     - _DrawOrder: 0
     - _DstBlend: 0
     - _EnvironmentReflections: 1
@@ -118,8 +118,10 @@ Material:
     - _QueueControl: 0
     - _QueueOffset: 0
     - _ReceiveShadows: 1
+    - _Scale: 1
     - _Smoothness: 0.5
     - _SmoothnessTextureChannel: 0
+    - _Soft_Edges: 1
     - _SpecularHighlights: 1
     - _Speed: 0.052
     - _SrcBlend: 1
