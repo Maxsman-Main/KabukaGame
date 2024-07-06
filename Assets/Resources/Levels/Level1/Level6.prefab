@@ -53,7 +53,7 @@ MonoBehaviour:
   spawnGroups:
   - {fileID: 355918874987234949}
   - {fileID: 6039036788810475123}
-  levelComplexity: 1000
+  levelComplexity: 100
 --- !u!1 &4112553114495078395
 GameObject:
   m_ObjectHideFlags: 0
@@ -4120,7 +4120,7 @@ MonoBehaviour:
   - {fileID: 6055585459933295886}
   - {fileID: 3706677778530768918}
   - {fileID: 8196911853694032088}
-  speed: 10
+  speed: 1
 --- !u!4 &7870083635270434357 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4400460941535452043, guid: 608f27b0e65a4014b8ebe228fb230319, type: 3}

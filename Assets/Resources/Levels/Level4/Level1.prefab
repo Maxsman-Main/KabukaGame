@@ -51,7 +51,7 @@ MonoBehaviour:
   playerPosition: {fileID: 6861427724822301341}
   patternEndPosition: {fileID: 171387376696881036}
   spawnGroups: []
-  levelComplexity: 10000
+  levelComplexity: 1
 --- !u!1 &5381343204478820778
 GameObject:
   m_ObjectHideFlags: 0
